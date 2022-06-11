@@ -53,7 +53,7 @@ def search():
 # ++++++++++ TKINTER ITEMS +++++++++++
 # -city entry
 city_text = StringVar()
-city_entry = Entry(app, textvariable=city_text)
+city_entry = Entry(app, textvariable=city_text, font=('bold', 14))
 # -search button
 search_btn = Button(app, text='Search weather', width=12, command=search)
 # -data labels
@@ -65,17 +65,18 @@ image = Label(app, bitmap='', bg='#001429', fg='white')
 
 
 # ++++++++++ TKINTER ITEM PACKING ++++++++++
-city_entry.pack()
-search_btn.pack()
-loc_lbl.pack()
-temp_lbl.pack()
-weather_lbl.pack()
-image.pack()
+city_entry.grid(row=0,padx=(10,0),pady=(10,0))
+search_btn.grid(row=0,column=2,padx=(10),pady=(10,0))
+loc_lbl.grid()
+temp_lbl.grid()
+# icon_lbl.grid() etc
+weather_lbl.grid()
+image.grid()
 
 
 # ++++++++++ MAIN CODE ++++++++++
 # ++++ Run in Console ++++
-#print(get_weather('Austin'))
+# print(get_weather('Austin'))
 
 # ++++ Run GUI ++++
 app.mainloop()
